@@ -66,9 +66,11 @@ export default function App() {
   useEffect(() => {
     if (wasOnDedicatedProject.current && !dedicatedProject) {
       // Allow React to re-mount <main> with #portfolio before scrolling
-      setTimeout(() => {
-        scrollToSection('portfolio');
-      }, 50);
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          scrollToSection('portfolio');
+        }, 100);
+      });
     }
     wasOnDedicatedProject.current = !!dedicatedProject;
   }, [dedicatedProject, scrollToSection]);

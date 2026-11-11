@@ -13,32 +13,11 @@ export function useSmoothScroll(initialSection = 'home') {
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) {
-      targetElement.scrollIntoView({ behavior: 'auto' });
+      targetElement.scrollIntoView({ behavior: 'auto', block: 'start' });
       return;
     }
 
-    const startPosition = window.pageYOffset;
-    const targetOffset = targetElement.getBoundingClientRect().top;
-    const distance = targetOffset;
-    const duration = 650;
-    let startTime: number | null = null;
-
-    const easeInOutCubic = (t: number): number =>
-      t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-
-    const animateScroll = (currentTime: number) => {
-      if (startTime === null) startTime = currentTime;
-      const elapsedTime = currentTime - startTime;
-      const progress = Math.min(elapsedTime / duration, 1);
-
-      window.scrollTo(0, startPosition + distance * easeInOutCubic(progress));
-
-      if (elapsedTime < duration) {
-        window.requestAnimationFrame(animateScroll);
-      }
-    };
-
-    window.requestAnimationFrame(animateScroll);
+    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, []);
 
   const toggleMobileMenu = useCallback(() => {
@@ -57,4 +36,3 @@ export function useSmoothScroll(initialSection = 'home') {
     closeMobileMenu
   };
 }
-
