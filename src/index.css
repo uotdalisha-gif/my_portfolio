@@ -134,7 +134,9 @@ html.light-theme body {
 }
 
 html.light-theme .bg-\[\#0a0a0a\],
-html.light-theme .bg-\[\#08080a\] {
+html.light-theme .bg-\[\#0a0a0c\],
+html.light-theme .bg-\[\#08080a\],
+html.light-theme .bg-\[\#05050a\] {
   background-color: #f8fafc !important;
   color: #0f172a !important;
 }
@@ -147,6 +149,14 @@ html.light-theme .bg-\[\#0f1015\] {
 }
 
 html.light-theme .bg-\[\#161616\],
+html.light-theme .bg-\[\#141519\],
+html.light-theme .bg-\[\#121316\],
+html.light-theme .bg-\[\#181920\],
+html.light-theme .bg-\[\#111216\],
+html.light-theme .bg-\[\#111214\],
+html.light-theme .bg-\[\#1a1b1e\],
+html.light-theme .bg-\[\#101114\],
+html.light-theme .bg-\[\#101115\],
 html.light-theme .bg-\[\#111111\] {
   background-color: #ffffff !important;
   color: #0f172a !important;

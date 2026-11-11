@@ -154,8 +154,10 @@ export const Hero: React.FC<HeroProps> = ({
         {/* Scroll indicator */}
         <div className="mt-16 sm:mt-20 flex justify-between items-center text-xs font-mono text-slate-400 border-t border-white/10 pt-6">
           <button
+            type="button"
             onClick={() => onNavigate('about')}
-            className="flex items-center gap-2 hover:text-white transition-colors group"
+            aria-label="Scroll down to About section"
+            className="flex items-center gap-2 hover:text-white transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#60a5fa] rounded-lg cursor-pointer"
           >
             <ArrowDown className="w-3.5 h-3.5 text-[#60a5fa] group-hover:translate-y-0.5 transition-transform" />
             <span>explore portfolio &amp; background</span>

@@ -134,3 +134,4 @@ export const TimelineCanvas: React.FC = () => {
     />
   );
 };
+

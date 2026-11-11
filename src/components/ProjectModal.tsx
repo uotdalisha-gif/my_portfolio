@@ -132,7 +132,8 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
                     type="button"
                     onClick={handleReload}
                     title="Reload live app"
-                    className="p-1 rounded text-slate-400 hover:text-white hover:bg-white/5 transition-colors ml-1 cursor-pointer"
+                    aria-label="Reload live application demo"
+                    className="p-1 rounded text-slate-400 hover:text-white hover:bg-white/5 transition-colors ml-1 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#60a5fa]"
                   >
                     <RotateCw className="w-3.5 h-3.5" />
                   </button>

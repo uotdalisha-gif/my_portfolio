@@ -104,3 +104,4 @@ export const LanguagesCanvas: React.FC = () => {
     />
   );
 };
+
