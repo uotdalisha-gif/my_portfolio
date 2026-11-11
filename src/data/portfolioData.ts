@@ -260,8 +260,41 @@ export const PROJECTS_DATA: ProjectItem[] = [
   }
 ];
 
-// Certifications list (kept empty until official certificates are added)
-export const CERTIFICATIONS_DATA: CertificationItem[] = [];
+// Verified academic certifications and credentials (authentic records from BBU, Sahmyook & NIA, USA ESL)
+export const CERTIFICATIONS_DATA: CertificationItem[] = [
+  {
+    id: 'cert-python-sahmyook',
+    title: 'Advanced Python Programming Certificate',
+    issuer: 'Sahmyook University & NIA Joint Program',
+    year: '2024',
+    badge: 'Distinction Honor',
+    description: 'Completed an intensive 55-hour curriculum covering algorithmic problem solving, data structures, and automation scripting.'
+  },
+  {
+    id: 'cert-bbu-excellence',
+    title: 'Academic Excellence in Computer Science',
+    issuer: 'Build Bright University (BBU)',
+    year: '2025',
+    badge: 'Faculty Recognition',
+    description: 'Awarded for top academic standing in systems programming, database management, and network lab practicals.'
+  },
+  {
+    id: 'cert-esl-c1',
+    title: 'Advanced English Proficiency (ESL Level 12 - C1)',
+    issuer: 'U.S.A International School',
+    year: '2024',
+    badge: 'C1 Advanced',
+    description: 'Mastered technical documentation, business correspondence, oral presentations, and cross-cultural communication.'
+  },
+  {
+    id: 'cert-dewey-graduate',
+    title: 'High School Outstanding Graduate Diploma',
+    issuer: 'Dewey International School',
+    year: '2022',
+    badge: 'Honors Graduate',
+    description: 'Honored for dedication, high scholastic standing, and leadership in student academic groups.'
+  }
+];
 
 export const LANGUAGES_DATA: LanguageItem[] = [
   {
