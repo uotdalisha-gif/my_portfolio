@@ -52,6 +52,7 @@ export const NAV_ITEMS: NavItem[] = [
   { id: 'timeline', label: 'Timeline' },
   { id: 'skills', label: 'Skills' },
   { id: 'portfolio', label: 'Portfolio' },
+  { id: 'languages', label: 'Languages' },
   { id: 'gallery', label: 'Gallery' },
   { id: 'contact', label: 'Contact' }
 ];

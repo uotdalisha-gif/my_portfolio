@@ -5,6 +5,7 @@ import { About } from './components/About';
 import { Timeline } from './components/Timeline';
 import { SkillsSection } from './components/SkillsSection';
 import { PortfolioSection } from './components/PortfolioSection';
+import { LanguagesSection } from './components/LanguagesSection';
 import { GallerySection } from './components/GallerySection';
 import { MarqueeRibbon } from './components/MarqueeRibbon';
 import { ContactSection } from './components/ContactSection';
@@ -148,6 +149,10 @@ export default function App() {
             />
             <PortfolioSection
               onSelectProject={(project) => setSelectedProject(project)}
+              onCursorEnter={(text, variant) => setCursorState(text, variant)}
+              onCursorLeave={resetCursorState}
+            />
+            <LanguagesSection
               onCursorEnter={(text, variant) => setCursorState(text, variant)}
               onCursorLeave={resetCursorState}
             />
