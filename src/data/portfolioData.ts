@@ -23,7 +23,8 @@ import {
   AwardItem,
   EducationItem,
   ExperienceItem,
-  GalleryItem
+  GalleryItem,
+  LanguageItem
 } from '../types/portfolio';
 
 export const PROFILE_DATA: ProfileInfo = {
@@ -51,7 +52,6 @@ export const NAV_ITEMS: NavItem[] = [
   { id: 'timeline', label: 'Timeline' },
   { id: 'skills', label: 'Skills' },
   { id: 'portfolio', label: 'Portfolio' },
-  { id: 'credentials', label: 'Credentials' },
   { id: 'gallery', label: 'Gallery' },
   { id: 'contact', label: 'Contact' }
 ];
@@ -259,61 +259,23 @@ export const PROJECTS_DATA: ProjectItem[] = [
   }
 ];
 
-// Verified certifications with high-resolution visual previews
-export const CERTIFICATIONS_DATA: CertificationItem[] = [
+// Certifications list (kept empty until official certificates are added)
+export const CERTIFICATIONS_DATA: CertificationItem[] = [];
+
+export const LANGUAGES_DATA: LanguageItem[] = [
   {
-    id: 'cert-python-sahmyook',
-    title: 'Advanced Python Programming Certificate',
-    issuer: 'Sahmyook University & NIA',
-    year: '2024',
-    badge: 'Distinction Honor',
-    description: 'Completed an intensive 55-hour program focusing on Python algorithm design, data structures, and automation scripting.',
-    imageUrl: '/gallery/cert-1.jpg'
+    language: 'Khmer',
+    nativeName: 'ភាសាខ្មែរ',
+    proficiency: 'Native Speaker',
+    level: 'Native',
+    description: 'First language: fluent in verbal communication, academic writing, and daily collaboration.'
   },
   {
-    id: 'cert-bbu-excellence',
-    title: 'Academic Excellence in Computer Science',
-    issuer: 'Build Bright University (BBU)',
-    year: '2025',
-    badge: 'Faculty Recognition',
-    description: 'Recognized for top academic ranking in systems programming and networking infrastructure lab practicals.',
-    imageUrl: '/gallery/cert-2.jpg'
-  },
-  {
-    id: 'cert-esl-c1',
-    title: 'Advanced English Proficiency (ESL Level 12 - C1)',
-    issuer: 'U.S.A International School',
-    year: '2024',
-    badge: 'C1 Advanced Level',
-    description: 'Mastered English language communication, technical writing, oral presentations, and business correspondence.',
-    imageUrl: '/gallery/cert-3.jpg'
-  },
-  {
-    id: 'cert-ad-dfs-lab',
-    title: 'Active Directory & Enterprise Systems Lab',
-    issuer: 'BBU Computer Systems Lab',
-    year: '2024',
-    badge: 'Hands-on Verified',
-    description: 'Implemented multi-server VMware environments: configured Active Directory Domain Controllers, deployed Group Policy Objects (GPO), and managed DFS Replication pipelines.',
-    imageUrl: '/gallery/cert-4.jpg'
-  },
-  {
-    id: 'cert-dewey-graduate',
-    title: 'High School Outstanding Graduate Diploma',
-    issuer: 'Dewey International School',
-    year: '2022',
-    badge: 'Outstanding Graduate',
-    description: 'Honored for dedication, high scholastic standing, and leadership in student academic groups.',
-    imageUrl: '/gallery/cert-5.jpg'
-  },
-  {
-    id: 'cert-fullstack-capstone',
-    title: 'Full-Stack Development Capstone',
-    issuer: 'Academic Software Capstone',
-    year: '2025',
-    badge: 'Production Capstone',
-    description: 'Architected and deployed a live cloud School Management System on Vercel with role-based dashboard authentication.',
-    imageUrl: '/gallery/cert-6.jpg'
+    language: 'English',
+    nativeName: 'English',
+    proficiency: 'Professional Working Proficiency',
+    level: 'C1 Advanced',
+    description: 'Fluent technical documentation, client correspondence, and presentations (ESL Level 12 Graduate).'
   }
 ];
 

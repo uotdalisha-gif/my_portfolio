@@ -46,6 +46,14 @@ export interface CertificationItem {
   credentialUrl?: string;
 }
 
+export interface LanguageItem {
+  language: string;
+  nativeName: string;
+  proficiency: string;
+  level: string;
+  description: string;
+}
+
 export interface AwardItem {
   id: string;
   title: string;

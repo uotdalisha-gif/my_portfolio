@@ -1,8 +1,8 @@
 import React from 'react';
-import { FileText, ArrowRight } from 'lucide-react';
+import { FileText, ArrowRight, Languages } from 'lucide-react';
 import { ScrambleText } from './ScrambleText';
 import { TopographicCanvas } from './TopographicCanvas';
-import { PROFILE_DATA } from '../data/portfolioData';
+import { PROFILE_DATA, LANGUAGES_DATA } from '../data/portfolioData';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 interface AboutProps {
@@ -131,6 +131,52 @@ export const About: React.FC<AboutProps> = ({
             </div>
           </div>
 
+        </div>
+
+        {/* Communication & Languages Card */}
+        <div
+          className={`mt-10 p-6 sm:p-7 rounded-2xl bg-[#141519] border border-white/[0.08] shadow-xl reveal-base ${
+            isVisible ? 'reveal-active' : ''
+          }`}
+          style={{ transitionDelay: '0.45s' }}
+        >
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/[0.08] pb-4 mb-5">
+            <div className="flex items-center gap-2.5">
+              <Languages className="w-5 h-5 text-[#60a5fa]" />
+              <h3 className="font-display font-bold text-white text-base sm:text-lg tracking-tight">
+                Communication &amp; Languages
+              </h3>
+            </div>
+            <span className="text-[11px] font-mono text-slate-400">
+              // COLLABORATION &amp; PROFICIENCY
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {LANGUAGES_DATA.map((lang) => (
+              <div
+                key={lang.language}
+                className="p-4 sm:p-5 rounded-xl bg-white/[0.02] border border-white/[0.06] flex items-start justify-between gap-4 group hover:border-[#60a5fa]/40 transition-colors"
+              >
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="font-display font-bold text-white text-base">
+                      {lang.language}
+                    </span>
+                    <span className="text-xs font-mono text-slate-400">
+                      ({lang.nativeName})
+                    </span>
+                  </div>
+                  <p className="text-xs text-slate-300 font-sans mt-1.5 leading-relaxed">
+                    {lang.description}
+                  </p>
+                </div>
+                <span className="px-3 py-1 rounded-lg text-xs font-mono font-bold bg-[#60a5fa]/10 text-[#60a5fa] border border-[#60a5fa]/20 whitespace-nowrap shrink-0">
+                  {lang.level}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

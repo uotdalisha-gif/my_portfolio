@@ -5,20 +5,18 @@ import { About } from './components/About';
 import { Timeline } from './components/Timeline';
 import { SkillsSection } from './components/SkillsSection';
 import { PortfolioSection } from './components/PortfolioSection';
-import { CredentialsSection } from './components/CredentialsSection';
 import { GallerySection } from './components/GallerySection';
 import { MarqueeRibbon } from './components/MarqueeRibbon';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { ProjectModal } from './components/ProjectModal';
-import { CertificateModal } from './components/CertificateModal';
 import { ProjectDetailPage } from './components/ProjectDetailPage';
 import { CustomCursor } from './components/CustomCursor';
 import { WelcomeLoader } from './components/WelcomeLoader';
 import { GrainOverlay } from './components/GrainOverlay';
 import { useSmoothScroll } from './hooks/useSmoothScroll';
 import { useMousePosition } from './hooks/useMousePosition';
-import { ProjectItem, CertificationItem } from './types/portfolio';
+import { ProjectItem } from './types/portfolio';
 import { PROJECTS_DATA } from './data/portfolioData';
 
 export default function App() {
@@ -26,7 +24,6 @@ export default function App() {
   const { position, cursorText, cursorVariant, setCursorState, resetCursorState } = useMousePosition();
 
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
-  const [selectedCert, setSelectedCert] = useState<CertificationItem | null>(null);
   const [dedicatedProject, setDedicatedProject] = useState<ProjectItem | null>(null);
 
   // Check if loader was already shown this session
@@ -154,11 +151,6 @@ export default function App() {
               onCursorEnter={(text, variant) => setCursorState(text, variant)}
               onCursorLeave={resetCursorState}
             />
-            <CredentialsSection
-              onSelectCert={(cert) => setSelectedCert(cert)}
-              onCursorEnter={(text, variant) => setCursorState(text, variant)}
-              onCursorLeave={resetCursorState}
-            />
             <GallerySection
               onCursorEnter={(text, variant) => setCursorState(text, variant)}
               onCursorLeave={resetCursorState}
@@ -188,8 +180,6 @@ export default function App() {
           onCursorEnter={(text, variant) => setCursorState(text, variant)}
           onCursorLeave={resetCursorState}
         />
-
-        <CertificateModal cert={selectedCert} onClose={() => setSelectedCert(null)} />
       </div>
     </div>
   );
