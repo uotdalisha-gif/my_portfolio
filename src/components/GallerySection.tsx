@@ -9,7 +9,7 @@ interface GallerySectionProps {
   onCursorLeave?: () => void;
 }
 
-type GalleryCategory = 'ALL' | 'CERTIFICATES' | 'ACADEMIC' | 'ACTIVITIES';
+type GalleryCategory = 'ALL' | 'WORKSHOPS' | 'ACADEMIC' | 'ACTIVITIES';
 
 export const GallerySection: React.FC<GallerySectionProps> = ({
   onCursorEnter,
@@ -22,7 +22,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
   const filteredItems = useMemo(() => {
     return activeCategory === 'ALL'
       ? GALLERY_DATA
-      : GALLERY_DATA.filter((item) => item.category === activeCategory);
+      : GALLERY_DATA.filter((item) => (item.category as string) === activeCategory);
   }, [activeCategory]);
 
   return (
@@ -41,15 +41,15 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
         >
           <div>
             <span className="text-xs font-mono uppercase tracking-widest text-[#60a5fa] font-semibold block mb-1">
-              // ACTIVITIES &amp; VERIFIED HONORS
+              // CAMPUS LIFE &amp; WORKSHOPS
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight font-display text-white">
-              Credentials &amp; Gallery
+              ACTIVITIES <span className="text-[#60a5fa]">//</span> GALLERY
             </h2>
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
-            {(['ALL', 'CERTIFICATES', 'ACADEMIC', 'ACTIVITIES'] as GalleryCategory[]).map((cat) => (
+            {(['ALL', 'WORKSHOPS', 'ACADEMIC', 'ACTIVITIES'] as GalleryCategory[]).map((cat) => (
               <button
                 key={cat}
                 type="button"
@@ -77,9 +77,9 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
             style={{ transitionDelay: '0.2s' }}
           >
             <ImageIcon className="w-12 h-12 text-slate-600 mb-2" />
-            <h3 className="text-lg font-display font-bold text-slate-200">No Photos or Certificates Added Yet</h3>
+            <h3 className="text-lg font-display font-bold text-slate-200">No Activity Photos Added Yet</h3>
             <p className="text-sm font-sans text-slate-400 max-w-md">
-              This gallery is ready for your uploaded images, certificate photos, and activity credentials.
+              This gallery is ready for your uploaded workshop photos, team lab sessions, and university activities.
             </p>
           </div>
         ) : (

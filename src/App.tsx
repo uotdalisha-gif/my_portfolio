@@ -5,6 +5,7 @@ import { About } from './components/About';
 import { Timeline } from './components/Timeline';
 import { SkillsSection } from './components/SkillsSection';
 import { PortfolioSection } from './components/PortfolioSection';
+import { CredentialsSection } from './components/CredentialsSection';
 import { GallerySection } from './components/GallerySection';
 import { MarqueeRibbon } from './components/MarqueeRibbon';
 import { ContactSection } from './components/ContactSection';
@@ -120,12 +121,15 @@ export default function App() {
             />
             <Timeline />
             <SkillsSection
-              onSelectCert={(cert) => setSelectedCert(cert)}
               onCursorEnter={(text, variant) => setCursorState(text, variant)}
               onCursorLeave={resetCursorState}
             />
             <PortfolioSection
               onSelectProject={(project) => setSelectedProject(project)}
+              onCursorEnter={(text, variant) => setCursorState(text, variant)}
+              onCursorLeave={resetCursorState}
+            />
+            <CredentialsSection
               onSelectCert={(cert) => setSelectedCert(cert)}
               onCursorEnter={(text, variant) => setCursorState(text, variant)}
               onCursorLeave={resetCursorState}

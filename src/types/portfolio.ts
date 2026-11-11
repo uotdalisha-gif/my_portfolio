@@ -42,6 +42,7 @@ export interface CertificationItem {
   year: string;
   badge: string;
   description: string;
+  imageUrl?: string;
   credentialUrl?: string;
 }
 
