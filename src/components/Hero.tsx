@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowUpRight, ArrowDown } from 'lucide-react';
 import { ScrambleText } from './ScrambleText';
 import { LanyardCard } from './LanyardCard';
@@ -15,6 +15,13 @@ export const Hero: React.FC<HeroProps> = ({
   onCursorEnter,
   onCursorLeave
 }) => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setMounted(true), 100);
+    return () => clearTimeout(t);
+  }, []);
+
   return (
     <section
       id="home"
@@ -38,9 +45,11 @@ export const Hero: React.FC<HeroProps> = ({
           {/* Left Column: Hero Text with Staggered Entrance Delays */}
           <div className="lg:col-span-7 flex flex-col items-start space-y-6">
             
-            {/* Status Pill - Instant fade-in */}
+            {/* Status Pill */}
             <div
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#161616] border border-white/10 shadow-sm transition-all duration-700 ease-out"
+              className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#161616] border border-white/10 shadow-sm transition-all duration-700 ease-out ${
+                mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
               style={{ transitionDelay: '0.1s' }}
             >
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" aria-hidden="true" />
@@ -52,10 +61,12 @@ export const Hero: React.FC<HeroProps> = ({
               </span>
             </div>
 
-            {/* Large Bold Heading: font size clamp(2.5rem, 6vw, 5rem) */}
+            {/* Large Bold Heading */}
             <div
-              className="space-y-1 transition-all duration-700 ease-out"
-              style={{ transitionDelay: '0.1s' }}
+              className={`space-y-1 transition-all duration-700 ease-out ${
+                mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+              style={{ transitionDelay: '0.2s' }}
             >
               <h1 className="text-white font-bold tracking-tight font-display leading-[1.05] text-[clamp(3rem,7vw,6rem)]" style={{ letterSpacing: '-0.02em' }}>
                 <ScrambleText text={PROFILE_DATA.name} className="text-white" speed={30} />
@@ -65,10 +76,12 @@ export const Hero: React.FC<HeroProps> = ({
               </h2>
             </div>
 
-            {/* Subtitle text fades in with 0.3s delay */}
+            {/* Subtitle text */}
             <div
-              className="space-y-3 transition-all duration-700 ease-out"
-              style={{ transitionDelay: '0.3s' }}
+              className={`space-y-3 transition-all duration-700 ease-out ${
+                mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+              style={{ transitionDelay: '0.35s' }}
             >
               <p className="font-mono text-xs sm:text-sm text-[#60a5fa] font-medium tracking-wide">
                 &lt;<ScrambleText text={PROFILE_DATA.subheadline} speed={15} /> /&gt;
@@ -80,8 +93,10 @@ export const Hero: React.FC<HeroProps> = ({
 
             {/* Tech Stack Badges */}
             <div
-              className="flex flex-wrap items-center gap-2 pt-1 transition-all duration-700 ease-out"
-              style={{ transitionDelay: '0.4s' }}
+              className={`flex flex-wrap items-center gap-2 pt-1 transition-all duration-700 ease-out ${
+                mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+              style={{ transitionDelay: '0.45s' }}
             >
               {FEATURED_TECH.map((tech) => (
                 <span
@@ -95,10 +110,12 @@ export const Hero: React.FC<HeroProps> = ({
               ))}
             </div>
 
-            {/* CTA Buttons fade in last (0.5s delay) */}
+            {/* CTA Buttons */}
             <div
-              className="flex flex-wrap items-center gap-4 pt-4 transition-all duration-700 ease-out"
-              style={{ transitionDelay: '0.5s' }}
+              className={`flex flex-wrap items-center gap-4 pt-4 transition-all duration-700 ease-out ${
+                mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+              style={{ transitionDelay: '0.55s' }}
             >
               <button
                 type="button"
