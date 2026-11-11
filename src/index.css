@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  font-size: 17px;
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 17.5px;
+  }
+}
+
 @layer utilities {
   @keyframes marquee {
     0% {

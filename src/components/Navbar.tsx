@@ -61,7 +61,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </button>
 
           {/* Desktop Nav Links */}
-          <div className="hidden md:flex items-center gap-7 lg:gap-8 text-[11px] lg:text-xs font-medium tracking-wider uppercase">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8 text-xs lg:text-sm font-bold tracking-wider uppercase">
             {NAV_ITEMS.map((item) => (
               <button
                 key={item.id}
@@ -70,7 +70,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 onMouseLeave={onCursorLeave}
                 className={`nav-link-underline transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#60a5fa] py-1 ${
                   activeSection === item.id
-                    ? 'text-white font-semibold active'
+                    ? 'text-white font-bold active'
                     : 'text-slate-400 hover:text-white'
                 }`}
               >
