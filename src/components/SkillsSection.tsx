@@ -3,6 +3,7 @@ import { SkillCard } from './SkillCard';
 import { SKILLS_DATA } from '../data/portfolioData';
 import { SkillCategory } from '../types/portfolio';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { SkillsCanvas } from './SkillsCanvas';
 
 interface SkillsSectionProps {
   onCursorEnter?: (text: string, variant?: 'hover') => void;
@@ -28,9 +29,12 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({
     <section
       id="skills"
       ref={ref}
-      className="py-28 sm:py-32 bg-[#0c0c0e] text-slate-100 border-t border-white/[0.08] relative"
+      className="relative py-28 sm:py-32 bg-[#0c0c0e] text-slate-100 border-t border-white/[0.08] overflow-hidden"
     >
-      <div className="container mx-auto px-6 max-w-6xl">
+      {/* Interactive Constellation Network Canvas */}
+      <SkillsCanvas />
+
+      <div className="container mx-auto px-6 max-w-6xl relative z-10 pointer-events-auto">
         {/* Section Heading & Category Filter */}
         <div
           className={`flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4 border-b border-white/[0.08] pb-6 reveal-base ${

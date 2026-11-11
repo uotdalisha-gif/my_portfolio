@@ -2,6 +2,7 @@ import React from 'react';
 import { GraduationCap, Briefcase } from 'lucide-react';
 import { EDUCATION_DATA, EXPERIENCE_DATA } from '../data/portfolioData';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { TimelineCanvas } from './TimelineCanvas';
 
 export const Timeline: React.FC = () => {
   const { ref, isVisible } = useScrollReveal<HTMLElement>({ threshold: 0.15 });
@@ -10,9 +11,12 @@ export const Timeline: React.FC = () => {
     <section
       id="timeline"
       ref={ref}
-      className="py-28 sm:py-36 bg-[#0a0a0a] border-t border-white/[0.08]"
+      className="relative py-28 sm:py-36 bg-[#0a0a0a] border-t border-white/[0.08] overflow-hidden"
     >
-      <div className="container mx-auto px-6 max-w-6xl">
+      {/* Interactive Milestone Matrix Canvas */}
+      <TimelineCanvas />
+
+      <div className="container mx-auto px-6 max-w-6xl relative z-10 pointer-events-auto">
         {/* Section Heading */}
         <div
           className={`flex flex-col items-center mb-16 text-center reveal-base ${

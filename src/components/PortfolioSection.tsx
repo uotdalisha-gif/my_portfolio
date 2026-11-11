@@ -4,6 +4,7 @@ import { ProjectCard } from './ProjectCard';
 import { PROJECTS_DATA, CERTIFICATIONS_DATA } from '../data/portfolioData';
 import { ProjectItem } from '../types/portfolio';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { PortfolioCanvas } from './PortfolioCanvas';
 
 interface PortfolioSectionProps {
   onSelectProject: (project: ProjectItem) => void;
@@ -22,9 +23,12 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
     <section
       id="portfolio"
       ref={ref}
-      className="py-28 sm:py-32 bg-[#0a0a0a] text-slate-100 border-t border-white/[0.08]"
+      className="relative py-28 sm:py-32 bg-[#0a0a0a] text-slate-100 border-t border-white/[0.08] overflow-hidden"
     >
-      <div className="container mx-auto px-6 max-w-6xl">
+      {/* Interactive Isometric Architectural Blueprint Canvas */}
+      <PortfolioCanvas />
+
+      <div className="container mx-auto px-6 max-w-6xl relative z-10 pointer-events-auto">
         {/* Header */}
         <div
           className={`flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4 border-b border-white/[0.08] pb-6 reveal-base ${

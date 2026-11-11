@@ -3,6 +3,7 @@ import { X, Maximize2, Calendar, Image as ImageIcon } from 'lucide-react';
 import { GALLERY_DATA } from '../data/portfolioData';
 import { GalleryItem } from '../types/portfolio';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { GalleryCanvas } from './GalleryCanvas';
 
 interface GallerySectionProps {
   onCursorEnter?: (text: string, variant?: 'hover') => void;
@@ -29,9 +30,12 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
     <section
       id="gallery"
       ref={ref}
-      className="py-28 sm:py-32 bg-[#0a0a0a] border-t border-white/[0.08] text-white relative"
+      className="relative py-28 sm:py-32 bg-[#0a0a0a] border-t border-white/[0.08] text-white overflow-hidden"
     >
-      <div className="container mx-auto px-6 max-w-6xl">
+      {/* Interactive Floating Luminous Light Bokeh Canvas */}
+      <GalleryCanvas />
+
+      <div className="container mx-auto px-6 max-w-6xl relative z-10 pointer-events-auto">
         {/* Header & Category Filters */}
         <div
           className={`flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4 border-b border-white/[0.08] pb-6 reveal-base ${

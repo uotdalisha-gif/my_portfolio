@@ -2,6 +2,7 @@ import React from 'react';
 import { Languages, CheckCircle2, MessageSquare } from 'lucide-react';
 import { LANGUAGES_DATA } from '../data/portfolioData';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { LanguagesCanvas } from './LanguagesCanvas';
 
 interface LanguagesSectionProps {
   onCursorEnter?: (text: string, variant?: 'hover') => void;
@@ -25,9 +26,12 @@ export const LanguagesSection: React.FC<LanguagesSectionProps> = ({
     <section
       id="languages"
       ref={ref}
-      className="py-14 sm:py-18 bg-[#0a0a0c] text-slate-100 border-t border-white/[0.08] relative"
+      className="relative py-14 sm:py-18 bg-[#0a0a0c] text-slate-100 border-t border-white/[0.08] overflow-hidden"
     >
-      <div className="container mx-auto px-6 max-w-4xl">
+      {/* Interactive Global Linguistic Frequency Wave Canvas */}
+      <LanguagesCanvas />
+
+      <div className="container mx-auto px-6 max-w-4xl relative z-10 pointer-events-auto">
         {/* Compact Section Header */}
         <div
           className={`flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-3 border-b border-white/[0.08] pb-4 reveal-base ${
