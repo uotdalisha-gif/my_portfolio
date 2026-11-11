@@ -13,6 +13,7 @@ export const WelcomeLoader: React.FC<WelcomeLoaderProps> = ({ onComplete }) => {
   const [lineExpanded, setLineExpanded] = useState(false);
   const [showTagline, setShowTagline] = useState(false);
   const [slideUp, setSlideUp] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     // Check sessionStorage
@@ -20,6 +21,21 @@ export const WelcomeLoader: React.FC<WelcomeLoaderProps> = ({ onComplete }) => {
       onComplete();
       return;
     }
+
+    // Counter from 0 to 100 over 2400ms
+    const totalDuration = 2400;
+    const intervalMs = 24;
+    const step = 100 / (totalDuration / intervalMs);
+    const counterTimer = setInterval(() => {
+      setProgress((prev) => {
+        const next = prev + step;
+        if (next >= 100) {
+          clearInterval(counterTimer);
+          return 100;
+        }
+        return next;
+      });
+    }, intervalMs);
 
     // Step 1: 0.0s to 0.8s - Typing effect
     const charDelay = 800 / FULL_NAME.length; // ~72ms per char
@@ -64,15 +80,17 @@ export const WelcomeLoader: React.FC<WelcomeLoaderProps> = ({ onComplete }) => {
     );
 
     return () => {
+      clearInterval(counterTimer);
       timeouts.forEach(clearTimeout);
     };
   }, [onComplete]);
 
   return (
     <div
-      className={`fixed inset-0 z-[9999] bg-[#0a0a0a] flex flex-col items-center justify-center pointer-events-none transition-transform duration-600 ease-in-out`}
+      className="fixed inset-0 z-[9999] bg-[#0a0a0a] flex flex-col items-center justify-center pointer-events-none"
       style={{
         transform: slideUp ? 'translateY(-100%)' : 'translateY(0%)',
+        transition: 'transform 0.6s cubic-bezier(0.76, 0, 0.24, 1)',
         willChange: 'transform',
       }}
       aria-hidden="true"
@@ -142,8 +160,12 @@ export const WelcomeLoader: React.FC<WelcomeLoaderProps> = ({ onComplete }) => {
             {ROLE_TEXT}
           </p>
         </div>
+
+        {/* Percentage Counter */}
+        <p className="text-[10px] font-mono text-slate-500 tracking-widest mt-3 tabular-nums select-none">
+          — {Math.round(progress)}% —
+        </p>
       </div>
     </div>
   );
 };
-
