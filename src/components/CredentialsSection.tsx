@@ -202,3 +202,4 @@ export const CredentialsSection: React.FC<CredentialsSectionProps> = ({
     </section>
   );
 };
+

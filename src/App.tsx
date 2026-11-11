@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -63,15 +63,40 @@ export default function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
+  const wasOnDedicatedProject = useRef(false);
+
+  useEffect(() => {
+    if (wasOnDedicatedProject.current && !dedicatedProject) {
+      // Allow React to re-mount <main> with #portfolio before scrolling
+      setTimeout(() => {
+        scrollToSection('portfolio');
+      }, 50);
+    }
+    wasOnDedicatedProject.current = !!dedicatedProject;
+  }, [dedicatedProject, scrollToSection]);
+
   const openDedicatedProject = (project: ProjectItem) => {
     window.location.hash = `#/project/${project.id}`;
     setDedicatedProject(project);
   };
 
   const closeDedicatedProject = () => {
-    window.location.hash = '#/portfolio';
+    if (window.location.hash.startsWith('#/project/')) {
+      window.history.pushState(null, '', window.location.pathname + '#portfolio');
+    }
     setDedicatedProject(null);
-    scrollToSection('portfolio');
+  };
+
+  const handleNavNavigate = (sectionId: string) => {
+    if (dedicatedProject) {
+      window.history.pushState(null, '', window.location.pathname + `#${sectionId}`);
+      setDedicatedProject(null);
+      setTimeout(() => {
+        scrollToSection(sectionId);
+      }, 50);
+    } else {
+      scrollToSection(sectionId);
+    }
   };
 
   return (
@@ -93,7 +118,7 @@ export default function App() {
         <Navbar
           activeSection={activeSection}
           isMobileMenuOpen={isMobileMenuOpen}
-          onNavigate={dedicatedProject ? closeDedicatedProject : scrollToSection}
+          onNavigate={handleNavNavigate}
           onToggleMobileMenu={toggleMobileMenu}
           onCursorEnter={(text, variant) => setCursorState(text, variant)}
           onCursorLeave={resetCursorState}
