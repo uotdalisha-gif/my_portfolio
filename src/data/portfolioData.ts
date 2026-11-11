@@ -240,6 +240,58 @@ export const PROJECTS_DATA: ProjectItem[] = [
     accentColor: '#3b82f6',
     demoUrl: 'https://school-management-sys-inky.vercel.app/dashboard',
     githubUrl: 'https://github.com/uotdalisha-gif/School-management-sys'
+  },
+  {
+    id: 'ad-dfs-infra',
+    title: 'Enterprise AD & DFS Infrastructure',
+    tagline: 'High-Availability Domain & Replicated Storage System',
+    category: 'Systems & Network Engineering',
+    description: 'A multi-server infrastructure simulating an enterprise environment with Active Directory Tree Domain and DFS automated synchronization.',
+    fullDescription: 'Configured and tested a complete enterprise environment in VMware: installed AD DS, promoted Primary and Additional Domain Controllers for fault tolerance, configured dynamic DHCP scopes with lease policies, and set up Distributed File System (DFS) Namespaces with Remote Differential Compression (RDC) replication.',
+    tags: ['Windows Server', 'Active Directory', 'DFS Replication', 'VMware', 'PowerShell'],
+    metrics: 'Zero-Downtime Failover, Sub-second Replication',
+    accentColor: '#3b66f5',
+    demoUrl: 'https://github.com/uotdalisha-gif',
+    githubUrl: 'https://github.com/uotdalisha-gif'
+  },
+  {
+    id: 'cambodia-pos',
+    title: 'Modern Retail POS & Inventory Platform',
+    tagline: 'Dynamic Sales, Invoicing, and Stock Management System',
+    category: 'Web & Database Application',
+    description: 'A full-stack Point of Sale application designed for retail shops with real-time barcode processing and inventory tracking.',
+    fullDescription: 'Developed a comprehensive web-based POS solution featuring role-based cashiers and admin accounts, item cataloging, low-stock alerts, sales reporting with visual graphs, and receipt generation with printable thermal templates.',
+    tags: ['PHP', 'MySQL', 'JavaScript', 'Tailwind CSS', 'HTML5'],
+    metrics: 'Processed 5,000+ Sample Transactions with <100ms Query Latency',
+    accentColor: '#10b981',
+    demoUrl: 'https://github.com/uotdalisha-gif',
+    githubUrl: 'https://github.com/uotdalisha-gif'
+  },
+  {
+    id: 'dalisha-portfolio',
+    title: 'Tactile Developer Hub & Showcase',
+    tagline: 'Clean Code React + TypeScript Brutalist Experience',
+    category: 'Frontend Engineering & Creative UI',
+    description: 'A high-performance portfolio featuring physics-based interactive lanyard badge, custom topography canvas waves, and clean architecture.',
+    fullDescription: 'Engineered following strict Clean Code principles: broken into decoupled sub-150-line components, custom hooks for physics and mouse tracking, fully typed TypeScript contracts, and complete keyboard accessibility with prefers-reduced-motion safety.',
+    tags: ['React 18', 'TypeScript', 'Tailwind CSS', 'Vite', 'Canvas API'],
+    metrics: '100/100 Lighthouse Performance & 100% Type-Safe',
+    accentColor: '#8b5cf6',
+    demoUrl: 'https://github.com/uotdalisha-gif',
+    githubUrl: 'https://github.com/uotdalisha-gif'
+  },
+  {
+    id: 'network-troubleshooter',
+    title: 'Network & System Diagnostic Utility',
+    tagline: 'Automated Log Inspection & Connectivity Testing Suite',
+    category: 'Automation & System Tools',
+    description: 'A Python-powered diagnostic utility that validates IP leases, DNS resolutions, and Domain Controller authentication.',
+    fullDescription: 'Created a desktop tool to automate common Tier-1 network troubleshooting: checks default gateways, verifies Active Directory connectivity, runs automated ping/traceroute benchmarks, and outputs structured status reports for administrators.',
+    tags: ['Python', 'Socket API', 'PowerShell Scripts', 'Batch', 'Tkinter'],
+    metrics: '70% Faster Network Diagnostics in Lab Environments',
+    accentColor: '#f59e0b',
+    demoUrl: 'https://github.com/uotdalisha-gif',
+    githubUrl: 'https://github.com/uotdalisha-gif'
   }
 ];
 
