@@ -15,18 +15,18 @@ export const CustomCursor: React.FC<CustomCursorProps> = ({
 
   return (
     <>
-      {/* Subtle ambient spotlight */}
+      {/* Subtle ambient spotlight with smooth lag trail */}
       <div
-        className="pointer-events-none fixed z-30 rounded-full opacity-30 mix-blend-screen"
+        className="pointer-events-none fixed z-30 rounded-full opacity-20 mix-blend-screen"
         style={{
           width: '500px',
           height: '500px',
           top: '-250px',
           left: '-250px',
           transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
-          transition: 'transform 120ms ease-out',
+          transition: 'transform 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94)',
           background:
-            'radial-gradient(circle, rgba(255, 255, 255, 0.06) 0%, rgba(96, 165, 250, 0.03) 40%, transparent 70%)'
+            'radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, rgba(96, 165, 250, 0.03) 40%, transparent 70%)'
         }}
       />
 
