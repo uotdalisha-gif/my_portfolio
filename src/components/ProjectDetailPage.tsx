@@ -125,21 +125,23 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
               </div>
             </div>
 
-            <div className="bg-[#0f1015] border border-slate-800/80 p-6 rounded-2xl">
-              <h3 className="text-xs font-mono font-bold uppercase text-slate-400 mb-2">
-                Next Project
-              </h3>
-              <button
-                type="button"
-                onClick={() => onSelectProject(nextProject)}
-                className="w-full text-left p-3 rounded-xl bg-slate-900/60 hover:bg-[#3b66f5]/10 border border-slate-800 hover:border-[#3b66f5]/50 transition-all group"
-              >
-                <span className="text-[10px] font-mono text-[#3b66f5] block">CONTINUE READING</span>
-                <span className="font-bold text-white text-sm group-hover:text-[#3b66f5] transition-colors">
-                  {nextProject.title} →
-                </span>
-              </button>
-            </div>
+            {nextProject && nextProject.id !== project.id && (
+              <div className="bg-[#0f1015] border border-slate-800/80 p-6 rounded-2xl">
+                <h3 className="text-xs font-mono font-bold uppercase text-slate-400 mb-2">
+                  Next Project
+                </h3>
+                <button
+                  type="button"
+                  onClick={() => onSelectProject(nextProject)}
+                  className="w-full text-left p-3 rounded-xl bg-slate-900/60 hover:bg-[#3b66f5]/10 border border-slate-800 hover:border-[#3b66f5]/50 transition-all group"
+                >
+                  <span className="text-[10px] font-mono text-[#3b66f5] block">CONTINUE READING</span>
+                  <span className="font-bold text-white text-sm group-hover:text-[#3b66f5] transition-colors">
+                    {nextProject.title} →
+                  </span>
+                </button>
+              </div>
+            )}
           </aside>
         </div>
       </div>

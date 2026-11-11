@@ -73,7 +73,13 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
 
         {/* Tab 1: Projects Grid (Clean Still Cards Grid) */}
         {activeTab === 'projects' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            className={
+              PROJECTS_DATA.length === 1
+                ? 'max-w-2xl mx-auto'
+                : 'grid grid-cols-1 md:grid-cols-2 gap-8'
+            }
+          >
             {PROJECTS_DATA.map((project, idx) => (
               <div
                 key={project.id}
