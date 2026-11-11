@@ -1,6 +1,5 @@
 import React from 'react';
 import { Send, CheckCircle2 } from 'lucide-react';
-import { MagneticButton } from './MagneticButton';
 import { useContactForm } from '../hooks/useContactForm';
 
 interface ContactFormProps {
@@ -76,18 +75,16 @@ export const ContactForm: React.FC<ContactFormProps> = ({
         />
       </div>
 
-      <MagneticButton className="w-full">
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          onMouseEnter={() => onCursorEnter?.('SEND', 'hover')}
-          onMouseLeave={onCursorLeave}
-          className="w-full py-3 rounded-xl bg-[#3b66f5] hover:bg-[#2d56e0] disabled:opacity-50 text-white font-semibold font-mono text-sm flex items-center justify-center gap-2 shadow-lg shadow-blue-500/25 transition-all focus-visible:ring-2 focus-visible:ring-white"
-        >
-          <Send className="w-4 h-4" />
-          <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
-        </button>
-      </MagneticButton>
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        onMouseEnter={() => onCursorEnter?.('SEND', 'hover')}
+        onMouseLeave={onCursorLeave}
+        className="w-full py-3.5 rounded-xl bg-[#3b82f6] hover:bg-[#2563eb] active:scale-[0.99] disabled:opacity-50 text-white font-bold font-mono text-sm flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_35px_rgba(59,130,246,0.6)] border border-blue-400/30 hover:border-blue-300/60 transition-all duration-300 cursor-pointer focus-visible:ring-2 focus-visible:ring-white"
+      >
+        <Send className="w-4 h-4" />
+        <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+      </button>
     </form>
   );
 };
