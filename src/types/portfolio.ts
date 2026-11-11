@@ -11,7 +11,13 @@ export interface SkillItem {
   name: string;
   category: Exclude<SkillCategory, 'ALL'>;
   description: string;
-  icon: LucideIcon;
+  icon?: LucideIcon;
+  simpleIcon?: {
+    title?: string;
+    path: string;
+    hex?: string;
+  };
+  brandColor?: string;
   proficiency: 'Familiar' | 'Intermediate' | 'Proficient' | 'Advanced' | 'Expert';
 }
 

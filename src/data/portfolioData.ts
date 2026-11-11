@@ -1,16 +1,19 @@
 import {
-  Code2,
-  Terminal,
-  Laptop,
-  Layers,
   Palette,
-  FolderGit2,
-  Cpu,
   Server,
   Network,
-  Database,
   BrainCircuit
 } from 'lucide-react';
+import {
+  siPython,
+  siReact,
+  siHtml5,
+  siPhp,
+  siTailwindcss,
+  siVmware,
+  siFigma,
+  siGit
+} from 'simple-icons';
 import {
   ProfileInfo,
   NavItem,
@@ -69,7 +72,8 @@ export const SKILLS_DATA: SkillItem[] = [
     name: 'PYTHON',
     category: 'DEVELOPMENT',
     description: 'Automation scripts, backend logic, and data analysis',
-    icon: Terminal,
+    simpleIcon: siPython,
+    brandColor: '#3776AB',
     proficiency: 'Advanced'
   },
   {
@@ -77,7 +81,8 @@ export const SKILLS_DATA: SkillItem[] = [
     name: 'REACT & TS',
     category: 'DEVELOPMENT',
     description: 'Modern component architectures & typed interfaces',
-    icon: Code2,
+    simpleIcon: siReact,
+    brandColor: '#61DAFB',
     proficiency: 'Advanced'
   },
   {
@@ -85,7 +90,8 @@ export const SKILLS_DATA: SkillItem[] = [
     name: 'HTML5 & CSS3',
     category: 'DEVELOPMENT',
     description: 'Semantic layouts, Flexbox/Grid, and responsive design',
-    icon: Laptop,
+    simpleIcon: siHtml5,
+    brandColor: '#E34F26',
     proficiency: 'Expert'
   },
   {
@@ -93,7 +99,8 @@ export const SKILLS_DATA: SkillItem[] = [
     name: 'PHP & MYSQL',
     category: 'DEVELOPMENT',
     description: 'Database schema design, queries, and server scripts',
-    icon: Database,
+    simpleIcon: siPhp,
+    brandColor: '#777BB4',
     proficiency: 'Proficient'
   },
   {
@@ -101,7 +108,8 @@ export const SKILLS_DATA: SkillItem[] = [
     name: 'TAILWIND CSS',
     category: 'DEVELOPMENT',
     description: 'Utility-first modern styling & brutalist aesthetics',
-    icon: Layers,
+    simpleIcon: siTailwindcss,
+    brandColor: '#06B6D4',
     proficiency: 'Advanced'
   },
   {
@@ -110,6 +118,7 @@ export const SKILLS_DATA: SkillItem[] = [
     category: 'NETWORKING',
     description: 'Domain Controller, Tree Domain, AD DS, and GPO policies',
     icon: Server,
+    brandColor: '#0078D4',
     proficiency: 'Advanced'
   },
   {
@@ -118,6 +127,7 @@ export const SKILLS_DATA: SkillItem[] = [
     category: 'NETWORKING',
     description: 'Distributed File System namespaces & RDC synchronization',
     icon: Network,
+    brandColor: '#0ea5e9',
     proficiency: 'Advanced'
   },
   {
@@ -125,7 +135,8 @@ export const SKILLS_DATA: SkillItem[] = [
     name: 'VMWARE LABS',
     category: 'NETWORKING',
     description: 'Virtual network topologies, DHCP, and host clustering',
-    icon: Cpu,
+    simpleIcon: siVmware,
+    brandColor: '#607078',
     proficiency: 'Advanced'
   },
   {
@@ -133,7 +144,8 @@ export const SKILLS_DATA: SkillItem[] = [
     name: 'UI / UX DESIGN',
     category: 'DESIGN',
     description: 'Wireframing, design systems, and user flow mapping',
-    icon: Palette,
+    simpleIcon: siFigma,
+    brandColor: '#F24E1E',
     proficiency: 'Advanced'
   },
   {
@@ -142,6 +154,7 @@ export const SKILLS_DATA: SkillItem[] = [
     category: 'DESIGN',
     description: 'Client poster designs, branding assets, and typography',
     icon: Palette,
+    brandColor: '#ec4899',
     proficiency: 'Advanced'
   },
   {
@@ -149,7 +162,8 @@ export const SKILLS_DATA: SkillItem[] = [
     name: 'GIT & GITHUB',
     category: 'TOOLS',
     description: 'Branch workflows, repository hygiene, and code reviews',
-    icon: FolderGit2,
+    simpleIcon: siGit,
+    brandColor: '#F05032',
     proficiency: 'Advanced'
   },
   {
@@ -158,6 +172,7 @@ export const SKILLS_DATA: SkillItem[] = [
     category: 'TOOLS',
     description: 'Prompt engineering, code debugging, and automation',
     icon: BrainCircuit,
+    brandColor: '#10b981',
     proficiency: 'Advanced'
   }
 ];
