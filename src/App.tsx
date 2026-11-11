@@ -83,7 +83,7 @@ export default function App() {
 
       <CustomCursor position={position} cursorText={cursorText} cursorVariant={cursorVariant} />
 
-      {/* Main Portfolio Content — hidden until loader finishes, then fades in smoothly */}
+      {/* Main Portfolio Content */}
       <div
         className={`transition-opacity duration-500 ease-out ${
           contentVisible ? 'opacity-100 visible' : 'opacity-0 invisible'
@@ -120,6 +120,7 @@ export default function App() {
             />
             <Timeline />
             <SkillsSection
+              onSelectCert={(cert) => setSelectedCert(cert)}
               onCursorEnter={(text, variant) => setCursorState(text, variant)}
               onCursorLeave={resetCursorState}
             />
@@ -139,7 +140,7 @@ export default function App() {
               onCursorLeave={resetCursorState}
             />
 
-            {/* Second ambient glow near the bottom */}
+            {/* Ambient glow near bottom */}
             <div className="absolute bottom-0 left-0 w-full h-[600px] pointer-events-none overflow-hidden" aria-hidden="true">
               <div
                 className="absolute bottom-[-200px] left-1/3 rounded-full bg-[#818cf8] blur-[200px] animate-blob-delayed"
